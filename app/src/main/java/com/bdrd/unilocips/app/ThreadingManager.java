@@ -113,9 +113,13 @@ final class ThreadingManager {
 
         void executeTask(Runnable r) {
             ThreadingManager.executor.execute(r);
+            if(verbose)
+                Log.d("Provider", "Execution request : Runnable");
         }
 
         Future<?> sumbitTask(Callable c) {
+            if(verbose)
+                Log.d("Provider", "Submission request : Callable");
             return ThreadingManager.executor.submit(c);
         }
     }
