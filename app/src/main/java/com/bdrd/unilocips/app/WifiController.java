@@ -22,10 +22,26 @@ final class WifiController {
     }
 
     void requestSurvey() {
+        disableButtons();
         List<ScanResult> results = scanner.performSurvey();
-        if(results != null) {
+        activity.displaySurveyResults(results);
+        enableButtons();
+    }
 
-        }
+    void requestMeasurement() {
+
+    }
+
+    private void enableButtons() {
+        activity.setAdvancedSettingsButtonEnabled(true);
+        activity.setTakeMeasurementButtonEnabled(true);
+        activity.setSurveyButtonEnabled(true);
+    }
+
+    private void disableButtons() {
+        activity.setAdvancedSettingsButtonEnabled(false);
+        activity.setTakeMeasurementButtonEnabled(false);
+        activity.setSurveyButtonEnabled(false);
     }
 
 
