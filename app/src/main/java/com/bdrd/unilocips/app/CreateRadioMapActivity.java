@@ -1,11 +1,15 @@
 package com.bdrd.unilocips.app;
 
+import android.content.DialogInterface;
 import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.bdrd.unilocips.R;
 
@@ -48,7 +52,10 @@ public class CreateRadioMapActivity extends AppCompatActivity {
             }
         }
         AlertDialog.Builder modal = new AlertDialog.Builder(this);
-
+        modal.setTitle(header);
+        modal.setMessage(body);
+        modal.setPositiveButton("Go back", (dialog, __) -> dialog.dismiss());
+        modal.show();
     }
 
     void setTakeMeasurementButtonEnabled(boolean enabled) {

@@ -5,30 +5,26 @@ import android.content.Context;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
-import android.widget.Button;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 /**
  *
  * @author David O'Neill
  */
-
 final class WifiScanner {
 
     final WifiManager wifiManager;
-    final CreateRadioMapActivity parentActivity;
+    final Context parentActivity;
 
     @TargetApi(Build.VERSION_CODES.M)
-    WifiScanner(CreateRadioMapActivity activity) {
+    WifiScanner(Context activity) {
         this.parentActivity = activity;
-        this.wifiManager = this.parentActivity.getSystemService(WifiManager.class);
+        this.wifiManager = (WifiManager) parentActivity.getApplicationContext()
+                                                       .getSystemService(Context.WIFI_SERVICE);
     }
 
     void performScan(int currentX, int currentY) {

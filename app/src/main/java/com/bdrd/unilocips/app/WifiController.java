@@ -1,9 +1,7 @@
 package com.bdrd.unilocips.app;
 
-import android.app.Activity;
+import android.content.Context;
 import android.net.wifi.ScanResult;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 
 import java.util.List;
 
@@ -12,11 +10,11 @@ import java.util.List;
  */
 final class WifiController {
 
-    private final CreateRadioMapActivity activity;
+    private final Context activity;
     private final WifiScanner scanner;
 
 
-    WifiController(CreateRadioMapActivity activity) {
+    WifiController(Context activity) {
         this.activity = activity;
         this.scanner = new WifiScanner(this.activity);
     }
@@ -24,7 +22,7 @@ final class WifiController {
     void requestSurvey() {
         disableButtons();
         List<ScanResult> results = scanner.performSurvey();
-        activity.displaySurveyResults(results);
+        ((CreateRadioMapActivity) activity).displaySurveyResults(results);
         enableButtons();
     }
 
@@ -33,17 +31,15 @@ final class WifiController {
     }
 
     private void enableButtons() {
-        activity.setAdvancedSettingsButtonEnabled(true);
-        activity.setTakeMeasurementButtonEnabled(true);
-        activity.setSurveyButtonEnabled(true);
+        ((CreateRadioMapActivity) activity).setAdvancedSettingsButtonEnabled(true);
+        ((CreateRadioMapActivity) activity).setTakeMeasurementButtonEnabled(true);
+        ((CreateRadioMapActivity) activity).setSurveyButtonEnabled(true);
     }
 
     private void disableButtons() {
-        activity.setAdvancedSettingsButtonEnabled(false);
-        activity.setTakeMeasurementButtonEnabled(false);
-        activity.setSurveyButtonEnabled(false);
+        ((CreateRadioMapActivity) activity).setAdvancedSettingsButtonEnabled(false);
+        ((CreateRadioMapActivity) activity).setTakeMeasurementButtonEnabled(false);
+        ((CreateRadioMapActivity) activity).setSurveyButtonEnabled(false);
     }
-
-
 
 }
