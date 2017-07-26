@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/current_x_label"
+            android:layout_width="156dp"
+            android:layout_height="53dp"
+            android:text="Current X:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintBottom_creator="1"
+            app:layout_constraintBottom_toTopOf="@+id/current_y_label"
+            app:layout_constraintRight_toRightOf="@+id/current_y_label"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintLeft_toLeftOf="@+id/current_y_label"
+            app:layout_constraintTop_toTopOf="@+id/x_coord_input"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/current_y_label"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Current Y:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintRight_toLeftOf="@+id/y_coord_input"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="11dp"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/y_coord_input"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="11dp"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <EditText
+            android:id="@+id/x_coord_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="183dp"
+            android:ems="10"
+            android:hint="Input your current X coordinate"
+            android:inputType="textPersonName|number"
+            android:text="X coordinate"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <EditText
+            android:id="@+id/y_coord_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Input your current Y coordinate"
+            android:inputType="textPersonName|number"
+            android:text="Y coordinate"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/x_coord_input"
+            app:layout_constraintRight_toRightOf="@+id/x_coord_input"
+            app:layout_constraintTop_toBottomOf="@+id/x_coord_input"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/take_measurement_button"
+            android:layout_width="255dp"
+            android:layout_height="71dp"
+            android:text="Take Measurement"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintBottom_creator="1"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="33dp"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/advanced_settings_button"
+            app:layout_constraintTop_toBottomOf="@+id/current_y_label" />
+
+        <Button
+            android:id="@+id/advanced_settings_button"
+            android:layout_width="244dp"
+            android:layout_height="57dp"
+            android:text="Advanced Settings"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintBottom_creator="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            android:layout_marginBottom="141dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.497" />
+
+        <Button
+            android:id="@+id/survey_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Survey"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/advanced_settings_button"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
